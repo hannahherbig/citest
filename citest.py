@@ -1,9 +1,12 @@
+from typing import Dict, List, Optional, Tuple
+
+
 class ModeStack:
     def __init__(self) -> None:
-        self.stack = []
-        self.count = {}
+        self.stack: List[Tuple[int, int]] = []
+        self.count: Dict[int, int] = {}
 
-    def push(self, value) -> None:
+    def push(self, value: int) -> None:
         if value not in self.count:
             self.count[value] = 1
         else:
@@ -22,8 +25,7 @@ class ModeStack:
         return value
 
     def mode(self) -> int:
-        if self.stack:
-            return self.stack[-1][1]
+        return self.stack[-1][1]
 
 
 if __name__ == "__main__":
