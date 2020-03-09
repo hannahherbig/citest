@@ -32,9 +32,9 @@ steps:
   displayName: 'Install dependencies'
 
 - script: |
-    flake8
+    poetry run flake8
   displayName: 'flake8'
 
 - script: |
-    mypy .
+    poetry run mypy .
   displayName: 'mypy'
