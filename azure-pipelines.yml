@@ -40,5 +40,5 @@ steps:
   displayName: 'mypy'
 
 - script: |
-    poetry run black --diff
+    poetry run black --check .
   displayName: 'black'
