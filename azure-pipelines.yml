@@ -36,5 +36,9 @@ steps:
   displayName: 'flake8'
 
 - script: |
-    poetry run mypy .
+    poetry run mypy --strict .
   displayName: 'mypy'
+
+- script: |
+    poetry run black --diff
+  displayName: 'black'
