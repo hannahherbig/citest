@@ -1,9 +1,9 @@
 class ModeStack:
-    def __init__(self):
+    def __init__(self) -> None:
         self.stack = []
         self.count = {}
 
-    def push(self, value):
+    def push(self, value) -> None:
         if value not in self.count:
             self.count[value] = 1
         else:
@@ -16,12 +16,12 @@ class ModeStack:
             mode = value
         self.stack.append((value, mode))
 
-    def pop(self):
-        value, mode = self.stack.pop()
+    def pop(self) -> int:
+        value = self.stack.pop()[0]
         self.count[value] -= 1
         return value
 
-    def mode(self):
+    def mode(self) -> int:
         if self.stack:
             return self.stack[-1][1]
 
